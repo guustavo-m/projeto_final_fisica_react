@@ -1,8 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 
-import logo from "../../assets/img/logo_buscfisica.png";
-
+import logo from "/img/logo_buscfisica.png";
 export default function Home() {
   const navigate = useNavigate();
 

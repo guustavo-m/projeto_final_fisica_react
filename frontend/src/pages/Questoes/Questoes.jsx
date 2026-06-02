@@ -12,7 +12,7 @@ import styles from "./Questoes.module.css";
 
 import API_URL from "../../services/api";
 
-import logo from "../../assets/img/logo_buscfisica.png";
+import logo from "/img/logo_buscfisica.png";
 
 import QuestaoCard from "../../components/QuestaoCard/QuestaoCard";
 
@@ -71,22 +71,22 @@ export default function Questoes() {
     try {
       setLoading(true);
 
-        const [
-        vestibularesRes,
-        topicosRes,
-        materiasRes,
-        questoesRes,
-        ] = await Promise.all([
-            fetch(`${API_URL}/questoes`),
-            fetch(`${API_URL}/vestibulares`),
-            fetch(`${API_URL}/materia`),
-            fetch(`${API_URL}/topico`)
-        ]);
+const [
+  questoesRes,
+  vestibularesRes,
+  materiasRes,
+  topicosRes,
+] = await Promise.all([
+  fetch(`${API_URL}/questoes`),
+  fetch(`${API_URL}/vestibulares`),
+  fetch(`${API_URL}/materia`),
+  fetch(`${API_URL}/topico`)
+]);
 
-const vestibularesData = await vestibularesRes.json();
-const topicosData = await topicosRes.json();
-const materiasData = await materiasRes.json();
 const questoesData = await questoesRes.json();
+const vestibularesData = await vestibularesRes.json();
+const materiasData = await materiasRes.json();
+const topicosData = await topicosRes.json();
 
       setVestibulares(
         vestibularesData
@@ -254,29 +254,14 @@ const questoesData = await questoesRes.json();
                 Todos
               </option>
 
-              {vestibulares.map(
-                (
-                  vestibular
-                ) => (
-                  <option
-                    key={
-                      vestibular.id
-                    }
-                    value={
-                      vestibular.id
-                    }
-                  >
-                    {
-                      vestibular.nome
-                    }{" "}
-                    -
-                    {" "}
-                    {
-                      vestibular.sigla
-                    }
-                  </option>
-                )
-              )}
+              {vestibulares.map((vestibular, index) => (
+  <option
+    key={vestibular.id || index}
+    value={vestibular.id}
+  >
+    {vestibular.nome} - {vestibular.sigla}
+  </option>
+))}
             </select>
           </div>
 
@@ -303,22 +288,14 @@ const questoesData = await questoesRes.json();
                 Todas
               </option>
 
-              {materias.map(
-                (materia) => (
-                  <option
-                    key={
-                      materia.id_mat
-                    }
-                    value={
-                      materia.id_mat
-                    }
-                  >
-                    {
-                      materia.nome_mat
-                    }
-                  </option>
-                )
-              )}
+              {materias.map((materia, index) => (
+  <option
+    key={materia.id_mat || index}
+    value={materia.id_mat}
+  >
+    {materia.nome_mat}
+  </option>
+))}
             </select>
           </div>
 
@@ -345,22 +322,14 @@ const questoesData = await questoesRes.json();
                 Todos
               </option>
 
-              {topicos.map(
-                (topico) => (
-                  <option
-                    key={
-                      topico.id_top
-                    }
-                    value={
-                      topico.id_top
-                    }
-                  >
-                    {
-                      topico.nome_top
-                    }
-                  </option>
-                )
-              )}
+              {topicos.map((topico, index) => (
+  <option
+    key={topico.id_top || index}
+    value={topico.id_top}
+  >
+    {topico.nome_top}
+  </option>
+))}
             </select>
           </div>
 

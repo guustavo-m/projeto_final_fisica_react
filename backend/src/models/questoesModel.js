@@ -21,8 +21,6 @@ async function buscarPorId(id) {
         WHERE q.idq = $1
     `;
 
-    console.log("QUERY EXECUTADA");
-
     const result = await pool.query(sql, [id]);
 
     console.log(result.rows[0]);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 
-import logo from "../../assets/img/logo_buscfisica.png";
+import logo from "/img/logo_buscfisica.png";
 
 export default function Login() {
   const navigate = useNavigate();

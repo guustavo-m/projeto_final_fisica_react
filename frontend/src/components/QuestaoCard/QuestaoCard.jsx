@@ -25,7 +25,7 @@ export default function QuestaoCard({ questao }) {
       }
 
       const data = await response.json();
-
+      console.log("RESPOSTA:", data);
       setResposta(data);
       setMostrarResposta(true);
     } catch (error) {

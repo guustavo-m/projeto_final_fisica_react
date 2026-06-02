@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Formulas.module.css";
 
-import logo from "../../assets/img/logo_buscfisica.png";
+import logo from "/img/logo_buscfisica.png";
 
 export default function Formulas() {
   const navigate = useNavigate();
