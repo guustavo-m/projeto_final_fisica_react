@@ -156,32 +156,3 @@ form {
   font-weight: 600;
   color: #ffb3b3;
 }
-
-.footer {
-  width: 100%;
-  background: #2f003d;
-  color: white;
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 50px;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.footerLogo h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 67px;
-  font-weight: 400;
-}
-
-.footerColumn h4 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.footerColumn p {
-  font-size: 20px;
-  margin-bottom: 10px;
-}

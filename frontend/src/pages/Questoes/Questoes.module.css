@@ -10,77 +10,12 @@ body {
   color: #111;
 }
 
-.header {
-  width: 100%;
-  height: 90px;
-  background: #2f003d;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-}
-
-.logoutButton {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: 'League Spartan', sans-serif;
-  transition: 0.3s;
-}
-
-.logoutButton:hover {
-  color: #8eff3f;
-}
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo h1 {
-  color: white;
-  font-size: 50px;
-  font-family: 'Anton', sans-serif;
-  font-weight: 400;
-}
-
-.logo img {
-    width: 70px;
-    height: 70px;
-}
-
-.navbar {
-  display: flex;
-  gap: 35px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #8eff3f;
-}
-
-.navbar .active {
-  color: #8eff3f;
-}
-
 .main {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* FILTROS */
 
 .filtros{
     width:65%;
@@ -123,27 +58,19 @@ body {
 .filtroGrupo select{
     width:270px;
     height:40px;
-
     border:none;
     border-radius:20px;
-
     background:#D8D8D8;
-
     text-align:center;
     font-size:1rem;
     font-weight:600;
 }
 
-/* QUESTÃO */
-
 .questaoBox{
     width:95%;
     margin:0 auto 40px;
-
     background:#4C0661;
-
     border-radius:25px;
-
     padding:20px;
 }
 
@@ -156,19 +83,14 @@ body {
 .tags span{
     background:#8E31B2;
     color:white;
-
     padding:8px 35px;
-
     border-radius:20px;
-
     font-size:1.2rem;
 }
 
 .questaoCard{
     background:#9330B8;
-
     border-radius:25px;
-
     padding:20px;
 }
 
@@ -200,21 +122,13 @@ body {
 
 .alternativa{
     background:#D8D8D8;
-
     border:none;
-
     height:60px;
-
     border-radius:30px;
-
     text-align:left;
-
     padding-left:25px;
-
     font-size:1.3rem;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
@@ -224,22 +138,15 @@ body {
 
 .btnResposta{
     display:block;
-
     margin:30px auto 10px;
-
     width:230px;
     height:55px;
-
     border:none;
     border-radius:30px;
-
     background:#4C0661;
-
     color:white;
-
     font-size:1.4rem;
     font-weight:600;
-
     cursor:pointer;
 }
 
@@ -247,49 +154,15 @@ body {
     background:#32003F;
 }
 
-.footer {
-  width: 100%;
-  background: #2f003d;
-  color: white;
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 50px;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.footerLogo h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 67px;
-  font-weight: 400;
-  margin-bottom: 30px;
-}
-
-.footerColumn h4 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.footerColumn p {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
 .btnBuscar{
     width:200px;
     height:45px;
-
     border:none;
     border-radius:25px;
-
     background:#b658d2;
     color:white;
-
     font-size:1rem;
     font-weight:600;
-
     cursor:pointer;
     transition:.3s;
 }

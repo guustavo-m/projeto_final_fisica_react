@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
-
+import Footer from '../../components/Footer/Footer'
 import logo from "/img/logo_buscfisica.png";
+import API_URL from "../../services/api";
 
 export default function Login() {
   const navigate = useNavigate();
-
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +14,6 @@ export default function Login() {
 
   function showMessage(text) {
     setMessage(text);
-
     setTimeout(() => {
       setMessage("");
     }, 3000);
@@ -22,34 +21,33 @@ export default function Login() {
 
   async function handleLogin(event) {
     event.preventDefault();
-
     if (!nome || !email || !password) {
       showMessage("Preencha nome, e-mail e password.");
       return;
     }
 
     try {
-      const response = await fetch("/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nome,
-          email,
-          password,
-        }),
-      });
+      const response = await fetch(
+        `${API_URL}/auth/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nome,
+            email,
+            password,
+          }),
+        }
+      );
 
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.mensagem || "Falha no login");
       }
-
       const data = await response.json();
-
       localStorage.setItem("jwtToken", data.token);
-
       navigate("/home");
     } catch (error) {
       showMessage(error.message);
@@ -68,7 +66,6 @@ export default function Login() {
       <main className={styles.mainContainer}>
         <section className={styles.loginSection}>
           <h2>LOGIN</h2>
-
           <p className={styles.subtitle}>
             Faça login para acessar sua conta.
           </p>
@@ -76,7 +73,6 @@ export default function Login() {
           <div className={styles.message}>
             {message}
           </div>
-
           <form onSubmit={handleLogin}>
             <div className={styles.formRow}>
               <label htmlFor="nome">
@@ -144,26 +140,7 @@ export default function Login() {
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerLogo}>
-          <h2>BUSCFÍSICA</h2>
-        </div>
-
-        <div className={styles.footerColumn}>
-          <h4>CONTATO</h4>
-          <p>BUSCFISICA7@GMAIL.COM</p>
-          <p>(19) 99653-1673</p>
-        </div>
-
-        <div className={styles.footerColumn}>
-          <h4>DESENVOLVEDORES</h4>
-          <p>AYLA CRISTINA DA SILVA VILELA</p>
-          <p>GABRIELLA CAMACHO STAVARENGO</p>
-          <p>GUSTAVO MILLAMONTE</p>
-          <p>MARIA VITÓRIA GUEDES FERREIRA</p>
-          <p>MANUELLA DA SILVA PIVA</p>
-        </div>
-      </footer>
+      <Footer/>
     </>
   );
 }
