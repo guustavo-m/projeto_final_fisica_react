@@ -14,13 +14,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerLogo}>
           <h2>BUSCFÍSICA</h2>
-
-          <button
-            className={styles.logoutButton}
-            onClick={logout}
-          >
-            SAIR
-          </button>
+          <button className={styles.logoutButton} onClick={logout}>SAIR</button>
         </div>
 
         <div className={styles.footerColumn}>

@@ -57,3 +57,7 @@
 .navbar a:hover {
   color: #8eff3f;
 }
+
+.navbar .active {
+  color: #8eff3f;
+}

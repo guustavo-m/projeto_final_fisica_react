@@ -1,11 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import logo from "/img/logo_buscfisica.png";
 
 export default function Home() {
   const navigate = useNavigate();
 
-    function logout() {
+  function logout() {
     localStorage.removeItem("jwtToken");
     navigate("/");
   }
@@ -17,28 +17,12 @@ export default function Home() {
           <h1>BUSCFÍSICA</h1>
           <img src={logo} alt="logo buscfísica" />
         </div>
-
         <nav className={styles.navbar}>
-          <Link
-            to="/home"
-          >
-            HOME
-          </Link>
+          <NavLink to="/home" className={({ isActive }) => isActive ? styles.active : ""}>HOME</NavLink>
+          <NavLink to="/questoes" className={({ isActive }) => isActive ? styles.active : ""}>QUESTÕES</NavLink>
+          <NavLink to="/formulas" className={({ isActive }) => isActive ? styles.active : ""}>FÓRMULAS</NavLink>
 
-          <Link to="/questoes">
-            QUESTÕES
-          </Link>
-
-          <Link to="/formulas">
-            FÓRMULAS
-          </Link>
-
-          <button
-            className={styles.logoutButton}
-            onClick={logout}
-          >
-            SAIR
-          </button>
+          <button className={styles.logoutButton} onClick={logout}>SAIR</button>
         </nav>
       </header>
     </>
